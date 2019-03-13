@@ -1,4 +1,4 @@
-# Docker, Lumen PHP, Nginx and MongoDB for Laravel/Lumen or any PHP 7.1 applications
+# Docker, PHP 7.1, Nginx and MongoDB for Laravel/Lumen or any PHP 7.1 applications
 
 This setup is great for writing quick apps in PHP using Lumen from an any Docker client. It uses docker-compose to setup the application services.
 
