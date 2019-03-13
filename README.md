@@ -1,22 +1,23 @@
-# Docker, PHP 7.1, Nginx and MongoDB for Laravel/Lumen or any PHP 7.1 applications
+# Docker, PHP 7.1, Nginx and MongoDB for Laravel/Lumen or any PHP applications
 
 This setup is great for writing quick apps in PHP using Lumen from an any Docker client. It uses docker-compose to setup the application services.
 
 ## Clone this repo
 
 ```bash
-git clone https://github.com/corinthoneto/docker-lumen.git
-cd docker-lumen
+git clone https://github.com/corinthoneto/php71-nginx-mongodb.git
+cd php71-nginx-mongodb
 ```
 
 ## Create Lumen App
 
-now, create the app in the `images\php` directory named `app`
+now, create the lumen (or Laravel) app inside `images/php` directory named
 
 ```bash
 cd images/php
 docker run --rm -it -v $(pwd):/app saada/lumen-cli lumen new app
 ```
+The name `app` is for correct operation (in this case, to modify `docker-compose.yml` if using other name)
 
 ## Existing Lumen App (considering that the app folder is a folder of your project)
 
@@ -48,6 +49,7 @@ To change configuration values, look in the `docker-compose.yml` file and change
 ### Build & Run
 
 ```bash
+Inside ../php71-nginx-mongodb
 docker-compose up --build -d
 ```
 
@@ -60,5 +62,6 @@ Feel free to configure the default port 80 in `docker-compose.yml` to whatever y
 ### Stop Everything
 
 ```bash
+Inside ../php71-nginx-mongodb
 docker-compose stop
 ```
