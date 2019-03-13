@@ -1,0 +1,35 @@
+nginx:
+  build: images/nginx
+  command: nginx -g "daemon off;"
+  links:
+    - php
+  ports:
+    - "80:80"
+php:
+  build: images/php
+  volumes:
+    - ./images/php:/var/www/html
+  working_dir: /var/www/html/app/public
+  command: php-fpm
+  links:
+    - db
+    - cache
+  ports:
+    - "9000:9000"
+  environment:
+    APP_ENV: local
+    APP_DEBUG: 'true'
+    APP_KEY: w2j3k5n6p7r9s2k4m5n7q8r9t3k4m693
+    APP_LOCALE: en
+    APP_FALLBACK_LOCALE: en
+    MEMCACHED_HOST: cache
+    CACHE_DRIVER: memcached
+db:
+    image: mongo:latest
+    container_name: cfln_mongodb
+    volumes:
+      - /data/db
+    ports:
+      - "27017:27017"
+cache:
+  image: memcached
