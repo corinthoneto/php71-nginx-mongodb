@@ -13,10 +13,19 @@ cd php71-nginx-mongodb
 
 now, create the lumen (or Laravel) app inside `images/php` directory named
 
+`For Latest lumen version`
+
 ```bash
 cd images/php
 docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli lumen new app
 ```
+`For 5.6 lumen version`
+
+```bash
+cd images/php
+docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli composer create-project laravel/lumen app "5.6.*"
+```
+
 The name `app` is for correct operation (in this case, to modify `docker-compose.yml` if using other name)
 
 ## Existing Lumen App (considering that the app folder is a folder of your project)
