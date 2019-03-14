@@ -28,7 +28,7 @@ docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli composer create-projec
 
 The name `app` is for correct operation (in this case, to modify `docker-compose.yml` if using other name)
 
-## Existing Lumen App (considering that the app folder is a folder of your project)
+## Existing Lumen App (considering the `app` folder is your main application folder)
 
 ```bash
 cd images/php/app
