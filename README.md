@@ -15,7 +15,7 @@ now, create the lumen (or Laravel) app inside `images/php` directory named
 
 ```bash
 cd images/php
-docker run --rm -it -v $(pwd):/app saada/lumen-cli lumen new app
+docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli lumen new app
 ```
 The name `app` is for correct operation (in this case, to modify `docker-compose.yml` if using other name)
 
@@ -23,13 +23,13 @@ The name `app` is for correct operation (in this case, to modify `docker-compose
 
 ```bash
 cd images/php/app
-docker run --rm -it -v $(pwd):/app saada/lumen-cli composer install
+docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli composer install
 ```
 
 ## Install mongodb support on laravel/lumen
 ```bash
 cd images/php/app 
-docker run --rm -it -v $(pwd):/app saada/lumen-cli composer require jenssegers/mongodb --ignore-platform-reqs
+docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli composer require jenssegers/mongodb --ignore-platform-reqs
 ```
 
 ### Configuration
