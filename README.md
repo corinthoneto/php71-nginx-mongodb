@@ -23,7 +23,7 @@ docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli lumen new app
 
 ```bash
 cd images/php
-docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli composer create-project laravel / lumen app "5.6.*"
+docker run --rm -it -v $(pwd):/app corinthoneto/lumen-cli composer create-project laravel/lumen app "5.6.*"
 ```
 
 The name `app` is for correct operation (in this case, to modify `docker-compose.yml` if using other name)
