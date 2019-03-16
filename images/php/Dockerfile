@@ -115,7 +115,10 @@ RUN apk del .build-deps \
 # pdo_odbc pdo_pgsql pdo_sqlite pgsql phar posix pspell readline recode reflection session shmop simplexml snmp soap
 # sockets spl standard sybase_ct sysvmsg sysvsem sysvshm tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip
 COPY config/php7.ini /usr/local/etc/php/conf.d/
-COPY config/fpm/php-fpm.conf /usr/local/etc/
-COPY config/fpm/pool.d /usr/local/etc/pool.d
+RUN true 
+COPY config/fpm/php-fpm.conf /usr/local/etc/ 
+RUN true
+COPY config/fpm/pool.d /usr/local/etc/pool.d 
+RUN true 
 VOLUME ["/var/www/html"]
 WORKDIR /var/www/html/app/public
